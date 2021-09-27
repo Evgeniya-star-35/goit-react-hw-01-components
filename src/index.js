@@ -1,8 +1,11 @@
 import "./index.css";
 import ReactDOM from "react-dom";
+import React from "react";
 import App from "./App";
 
-// const element = React.createElement("div", { children: "Hello world!" });
-const jsxElement = <div>Hello, world</div>;
-console.log(jsxElement);
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.querySelector("#root")
+);
