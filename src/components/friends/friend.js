@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import defaultImage from "./default-img.jpg";
-export default function Friend({ avatar = defaultImage, name, isOnline }) {
+
+export default function Friend({ avatar, name, isOnline }) {
   return (
     <div className="item">
       <span className="status">{isOnline}</span>
@@ -10,7 +10,7 @@ export default function Friend({ avatar = defaultImage, name, isOnline }) {
   );
 }
 Friend.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
