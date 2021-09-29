@@ -20,14 +20,6 @@
   padding: 30px;
 }
 
-.thumb {
-  width: 200px;
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: rgb(204, 195, 195);
-}
-
 .avatar {
   justify-items: center;
   border-radius: 50%;
