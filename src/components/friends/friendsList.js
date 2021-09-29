@@ -1,15 +1,33 @@
-import Friend from "./friend";
+import styles from "./Friend.module.css";
 import PropTypes from "prop-types";
-export default function FriendsList({ items }) {
+
+function friendIsOnline(status) {
+  if (status) {
+    return "#2ECC71";
+  } else {
+    return "#E74C3C";
+  }
+}
+export default function FriendsList({ friends }) {
   return (
-    <ul>
-      {items.map((item) => (
-        <li key={item.id}>
-          <Friend
-            avatar={item.avatar}
-            name={item.name}
-            isOnline={item.isOnline}
+    <ul className={styles.friendList}>
+      {friends.map((friend) => (
+        <li className={styles.item} key={friend.id}>
+          {" "}
+          <span
+            className={styles.status}
+            style={{ color: friendIsOnline(friend.isOnline) }}
+          >
+            {" "}
+            ●
+          </span>
+          <img
+            className={styles.avatar}
+            src={friend.avatar}
+            alt={friend.name}
+            width="48"
           />
+          <p className={styles.name}>{friend.name}</p>
         </li>
       ))}
     </ul>
@@ -17,9 +35,14 @@ export default function FriendsList({ items }) {
 }
 
 FriendsList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    })
-  ),
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+  id: PropTypes.number,
+};
+FriendsList.defaultProps = {
+  avatar:
+    "https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51402215-stock-illustration-male-avatar-profile-picture-use.jpg",
+  name: "User name",
+  isOnline: false,
 };
