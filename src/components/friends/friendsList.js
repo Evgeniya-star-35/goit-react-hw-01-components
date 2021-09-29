@@ -10,27 +10,29 @@ function friendIsOnline(status) {
 }
 export default function FriendsList({ friends }) {
   return (
-    <ul className={styles.friendList}>
-      {friends.map((friend) => (
-        <li className={styles.item} key={friend.id}>
-          {" "}
-          <span
-            className={styles.status}
-            style={{ color: friendIsOnline(friend.isOnline) }}
-          >
+    <div className={styles.friends}>
+      <ul className={styles.friendList}>
+        {friends.map((friend) => (
+          <li className={styles.item} key={friend.id}>
             {" "}
-            ●
-          </span>
-          <img
-            className={styles.avatar}
-            src={friend.avatar}
-            alt={friend.name}
-            width="48"
-          />
-          <p className={styles.name}>{friend.name}</p>
-        </li>
-      ))}
-    </ul>
+            <span
+              className={styles.status}
+              style={{ color: friendIsOnline(friend.isOnline) }}
+            >
+              {" "}
+              ●
+            </span>
+            <img
+              className={styles.avatar}
+              src={friend.avatar}
+              alt={friend.name}
+              width="48"
+            />
+            <p className={styles.name}>{friend.name}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
