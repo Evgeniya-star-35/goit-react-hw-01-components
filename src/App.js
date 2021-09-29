@@ -6,10 +6,11 @@ import user from "././jsonFiles/user.json";
 import statisticalData from "././jsonFiles/statistical-data.json";
 import transaction from "././jsonFiles/transactions.json";
 import friends from "././jsonFiles/friends.json";
+import Container from "./components/container/container";
 
 export default function App() {
   return (
-    <div>
+    <Container>
       <Profile
         name={user.name}
         tag={user.tag}
@@ -21,6 +22,6 @@ export default function App() {
       <Statistics title="Upload stats" stats={statisticalData} />
       <Statistics stats={statisticalData} />
       <TransactionHistory transactions={transaction} />
-    </div>
+    </Container>
   );
 }
