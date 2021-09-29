@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./statistic.css";
+import stat from "./Statistic.module.css";
 
 export default function Statistics({ title, stats }) {
   const createRandomColor = () => {
@@ -8,18 +8,18 @@ export default function Statistics({ title, stats }) {
     })`;
   };
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title.toUpperCase()}</h2>}
+    <section className={stat.statistics}>
+      {title && <h2 className={stat.title}>{title.toUpperCase()}</h2>}
 
-      <ul className="statList">
+      <ul className={stat.statList}>
         {stats.map(({ id, percentage, label }) => (
           <li
             key={id}
-            className="statisticItem"
+            className={stat.statisticItem}
             style={{ backgroundColor: createRandomColor() }}
           >
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}%</span>
+            <span className={stat.label}>{label}</span>
+            <span className={stat.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
