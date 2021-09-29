@@ -1,4 +1,4 @@
-import styles from "./Friend.module.css";
+import s from "./Friend.module.css";
 import PropTypes from "prop-types";
 
 function friendIsOnline(status) {
@@ -10,25 +10,25 @@ function friendIsOnline(status) {
 }
 export default function FriendsList({ friends }) {
   return (
-    <div className={styles.friends}>
-      <ul className={styles.friendList}>
+    <div className={s.friends}>
+      <ul className={s.friendList}>
         {friends.map((friend) => (
-          <li className={styles.item} key={friend.id}>
+          <li className={s.item} key={friend.id}>
             {" "}
             <span
-              className={styles.status}
+              className={s.status}
               style={{ color: friendIsOnline(friend.isOnline) }}
             >
               {" "}
               ●
             </span>
             <img
-              className={styles.avatar}
+              className={s.avatar}
               src={friend.avatar}
               alt={friend.name}
               width="48"
             />
-            <p className={styles.name}>{friend.name}</p>
+            <p className={s.name}>{friend.name}</p>
           </li>
         ))}
       </ul>
