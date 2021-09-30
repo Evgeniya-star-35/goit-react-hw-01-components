@@ -1,13 +1,7 @@
 import s from './FriendsList.module.css';
 import PropTypes from 'prop-types';
+import { friendIsOnline } from '../helpers/FriendIsOnline-helper';
 
-function friendIsOnline(status) {
-  if (status) {
-    return '#2ECC71';
-  } else {
-    return '#E74C3C';
-  }
-}
 export default function Friend({ avatar, name, isOnline }) {
   return (
     <div className={s.item}>

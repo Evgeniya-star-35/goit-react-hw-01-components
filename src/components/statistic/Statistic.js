@@ -1,12 +1,8 @@
 import PropTypes from 'prop-types';
 import s from './Statistic.module.css';
+import { createRandomColor } from '../helpers/RandomColor-helper';
 
 export default function Statistics({ title, stats }) {
-  const createRandomColor = () => {
-    return `rgb(${(Math.random() * 255) << 0}, ${(Math.random() * 255) << 0}, ${
-      (Math.random() * 255) << 0
-    })`;
-  };
   return (
     <section className={s.statistics}>
       {title && <h2 className={s.title}>{title.toUpperCase()}</h2>}
