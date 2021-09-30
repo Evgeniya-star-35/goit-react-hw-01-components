@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import s from "./Transaction.module.css";
+import PropTypes from 'prop-types';
+import s from './TransactionHistory.module.css';
 
 export default function TransactionHistory({ transactions }) {
   return (
@@ -13,7 +13,7 @@ export default function TransactionHistory({ transactions }) {
           </tr>
         </thead>
         <tbody className={s.tableBody}>
-          {transactions.map((transaction) => (
+          {transactions.map(transaction => (
             <tr key={transaction.id}>
               <td className={s.tableData}>{transaction.type}</td>
               <td className={s.tableData}>{transaction.amount}</td>
@@ -32,11 +32,11 @@ TransactionHistory.propTypes = {
       type: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
-    })
+    }),
   ),
 };
 
 TransactionHistory.defaultProps = {
-  type: "Type",
-  currency: "Currency",
+  type: 'Type',
+  currency: 'Currency',
 };
