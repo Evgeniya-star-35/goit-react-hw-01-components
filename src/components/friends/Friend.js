@@ -4,7 +4,7 @@ import { friendIsOnline } from '../../helpers/FriendIsOnline-helper';
 
 export default function Friend({ avatar, name, isOnline, id }) {
   return (
-    <div className={s.item}>
+    <div key={id} className={s.item}>
       {' '}
       <span className={s.status} style={{ color: friendIsOnline(isOnline) }}>
         {' '}
@@ -19,6 +19,7 @@ Friend.propTypes = {
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   isOnline: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
 };
 Friend.defaultProps = {
   avatar:
