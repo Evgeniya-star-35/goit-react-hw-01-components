@@ -1,8 +1,8 @@
 import s from './FriendsList.module.css';
 import PropTypes from 'prop-types';
-import { friendIsOnline } from '../helpers/FriendIsOnline-helper';
+import { friendIsOnline } from '../../helpers/FriendIsOnline-helper';
 
-export default function Friend({ avatar, name, isOnline }) {
+export default function Friend({ avatar, name, isOnline, id }) {
   return (
     <div className={s.item}>
       {' '}
