@@ -7,7 +7,7 @@ export default function FriendsList({ friends }) {
     <div className={s.friends}>
       <ul className={s.friendList}>
         {friends.map(({ avatar, name, isOnline, id }) => (
-          <li>
+          <li key={id}>
             <Friend avatar={avatar} name={name} isOnline={isOnline} id={id} />
           </li>
         ))}
@@ -19,9 +19,9 @@ export default function FriendsList({ friends }) {
 FriendsList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
+      // avatar: PropTypes.string.isRequired,
+      // name: PropTypes.string.isRequired,
+      // isOnline: PropTypes.bool.isRequired,
       id: PropTypes.number.isRequired,
     }),
   ),
